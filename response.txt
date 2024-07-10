@@ -1,0 +1,12 @@
+```json
+{
+  "name": null,
+  "age": 18,
+  "weight": null,
+  "height": null,
+  "past_medical_history": "sinusitis",
+  "current_medication": "paracetamol",
+  "allergies": "smoke, dust",
+  "chief_complaint": "bad common cold"
+}
+```

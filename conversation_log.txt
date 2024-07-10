@@ -1,0 +1,17 @@
+Patient: namaste doctor! 
+V-Doc: Namaste, thank you for reaching out. I understand that you may have some concerns or questions. To better assist you, could you please provide me with some more information about your situation?
+Patient: I am having bad common cold for past 2 weeks 
+V-Doc: I understand that you've been experiencing a bad common cold for the past two weeks. Can you tell me a little bit more about your symptoms? How long have you been experiencing them? Have you noticed any other changes in your health recently?
+Patient: I have running nose, headache and pain in the eyes
+V-Doc: I understand that you are experiencing a running nose, headache, and pain in your eyes.
+
+Could you please provide me with some additional information to help me better understand your situation?
+
+* How long have you been experiencing these symptoms?
+* Have you noticed any other symptoms, such as fever, cough, or sore throat?
+* Do you have any allergies or a history of sinus infections?
+* Are you currently taking any medications?
+Patient: its been 3 weeks, I had a history of sinusitis, i am allergic to smoke, dust, i am currently taking paracetamol
+V-Doc: I understand that you've been experiencing sinusitis for the past three weeks. Can you tell me a little more about your symptoms? How severe are they, and what have you tried to do to relieve them?
+Patient: i am 18 years old 
+V-Doc: I understand that you are 18 years old. May I ask what brings you to the clinic today?
