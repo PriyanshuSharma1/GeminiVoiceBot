@@ -1,3 +1,4 @@
 /.venv
 /.env
 /audio.mp3
+/health_assistant/welcome.mp3
