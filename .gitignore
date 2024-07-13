@@ -2,3 +2,4 @@
 /.env
 /audio.mp3
 /health_assistant/welcome.mp3
+/node_modules
