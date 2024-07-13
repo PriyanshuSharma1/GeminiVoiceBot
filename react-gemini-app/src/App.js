@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 const App = () => {
   const [value, setValue] = useState("");
@@ -10,7 +11,6 @@ const App = () => {
     "What are the visiting hours?",
     "Can I bring my pet?",
   ];
-
   const FAQs = () => {
     const randomIndex = Math.floor(Math.random() * Ques.length);
     setValue(Ques[randomIndex]);
@@ -28,31 +28,35 @@ const App = () => {
     }
     try {
       const options = {
-        method: "POST",
+        method: "post",
         body: JSON.stringify({ history: chatHistory, message: value }),
         headers: {
           "Content-Type": "application/json",
         },
       };
       const response = await fetch("http://localhost:8000/gemini", options);
-      const data = await response.json();
-      console.log(data);
+      const data = await response.text();
 
       setChatHistory((prev) => [
         ...prev,
         {
           role: "user",
-          parts: value,
+          parts: [{ text: value }],
         },
         {
-          role: "AI",
-          parts: data.message,
+          role: "model",
+          parts: [{ text: data }],
         },
       ]);
       setValue("");
-      setError(""); // Clear error on successful response
+      setError("");
     } catch (error) {
       setError("Something went wrong. Please try again");
+    }
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      getResponse();
     }
   };
 
@@ -70,8 +74,8 @@ const App = () => {
           placeholder="When is New Year?"
           onChange={(e) => {
             setValue(e.target.value);
-            setError(""); // Clear error when user starts typing
           }}
+          onPress={handleKeyPress}
         />
         {!error && <button onClick={getResponse}>Ask</button>}
         {error && <button onClick={clear}>Clear</button>}
@@ -80,8 +84,9 @@ const App = () => {
       <div className="search-results">
         {chatHistory.map((chatItem, _index) => (
           <div key={_index}>
+            {chatItem.role} 
             <p className="answer">
-              {chatItem.role} : {chatItem.parts}
+              <ReactMarkdown>{chatItem.parts[0].text}</ReactMarkdown>
             </p>
           </div>
         ))}

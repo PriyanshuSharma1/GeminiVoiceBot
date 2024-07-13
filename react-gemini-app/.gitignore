@@ -26,3 +26,4 @@ yarn-error.log*
 /.env
 /react-gemini-app/node_modules
 /react-gemini-app/.env
+node_modules
